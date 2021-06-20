@@ -213,38 +213,9 @@ function ticker($belt, $workers, $stepCount, $random, $process_order = null)
 // Function to update the view
 function updateView($returnView)
 {
-    $sum_manufactured = 0;
-    $sum_no_worker_interaction = 0;
-    $empty_objects_processed = 0;
-
-    for ($i = 0; $i < count($returnView->collection); $i++) {
-
-        if (!empty($returnView->collection[$i])) {
-
-            $inventory = $returnView->collection[$i]->inventory; // Get Inventory
-
-            // Count objects with C
-            if ($inventory  == 'c') {
-                $sum_manufactured++;
-            }
-
-            if ($inventory == 'a' || $inventory == 'b') {
-                $sum_no_worker_interaction++;
-            }
-        }
-
-        if (!empty($returnView->collection[$i])) {
-            if ($inventory == '0') {
-                $empty_objects_processed++;
-            }
-        }
-    }
 
     return (object) [
         'return_all' => $returnView->collection,
-        'sum_manufactured' => $sum_manufactured,
-        'sum_no_worker_interaction' => $sum_no_worker_interaction,
-        'empty_objects_processed' => $empty_objects_processed,
         'log' => $returnView->worker_talk
     ];
 }

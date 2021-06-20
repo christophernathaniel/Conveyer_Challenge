@@ -3,14 +3,16 @@
 // Format the answer;
 function formatAnswer($getAnswers)
 {
+
     $content = '';
     $content .= '<pre>';
-    $content .= 'Objects Not Touched by Worker: ' . $getAnswers->sum_no_worker_interaction . '<br>';
-    $content .= 'Times conveyer belt produced nothing: ' . $getAnswers->empty_objects_processed . '<br>';
+
 
     // Create buld Inventory
     $build_inventory = [];
     for ($i = 0; $i < count($getAnswers->return_all); $i++) {
+
+
         // Remove all inventory items that may return null
         if (!isset($getAnswers->return_all[$i]->inventory)) {
             continue;
