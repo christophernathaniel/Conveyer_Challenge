@@ -1,3 +1,5 @@
+Please note that this is a test example and should not be used as a real world example. This should also not be copied to pass a test that you do not know the answer for. This is for educational purposes only.
+
 <h1>Conveyer Belt Challenge</h1>
 
 <h2>The challenge</h2>
